@@ -27,7 +27,7 @@ Stage=>Sprite=>EventEmitter
 
 ## 实现
 监听Canvas的原生点击事件，计算Canvas在页面上的位置，获取鼠标点击在页面上的坐标点，`点击点坐标` - `Canvas位置偏移量` = `点击点再Canvas坐标系上的坐标`。
-```
+```js
   // Stage.js
   initTouchHandel() {
     this._stageEl.addEventListener('click', (event)=> {
@@ -74,7 +74,7 @@ Stage=>Sprite=>EventEmitter
   }
 ```
 由于换算获取到了点击相对Canvas的坐标点，而Canvas内只有一个坐标系，所以这里很好实现元素的点击检测。
-```
+```js
   // Sprite.js
   hitTest(stageX, stageY) {
     const sp = this
